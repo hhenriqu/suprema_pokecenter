@@ -20,8 +20,6 @@ export default async function getPokemons(page: number) {
     sprite: pokemon.sprites.front_default
   }));
 
-  console.log(PokemonDatailed.type);
-
   return PokemonDatailed;
 
 }

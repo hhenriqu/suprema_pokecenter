@@ -1,12 +1,11 @@
-
-import ShowPokeList from "@/components/ShowPokeList/ShowPokeList";
-import PokemonSlide from "@/components/SliderSection/SliderSection";
+import Header from '@/components/Header/Header'
+import ShowPokeList from '@/components/ShowPokeList/ShowPokeList'
 
 export default function Home() {
   return (
     <>
-    <PokemonSlide/>
-    <ShowPokeList/>
+      <Header />
+      <ShowPokeList />
     </>
-  );
+  )
 }
