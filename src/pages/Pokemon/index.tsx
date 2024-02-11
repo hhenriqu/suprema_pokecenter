@@ -1,14 +1,13 @@
 'use client'
+import { CardDiv } from '@/components/ShowPokeList/PokemonCard/style'
 import IPokemon from '@/types/pokemon'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
-import { CardDiv } from './PokemonCard.style'
 
 type Props = {
   pokemon: IPokemon
 }
 
-export default function PokemonCard({ pokemon }: Props) {
+export default function PokemonId({ pokemon }: Props) {
   return (
     <CardDiv>
       <div className="pokeImage">

@@ -1,6 +1,8 @@
 export default async function getPokemons(page: number) {
   const offset = page === 1 ? 0 : (page - 1) * 10;
 
+ 
+
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${offset}&offset=0`);
   const { results } = await response.json();
 

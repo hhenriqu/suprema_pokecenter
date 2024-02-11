@@ -4,7 +4,6 @@ import ShowPokeList from '@/components/ShowPokeList/ShowPokeList'
 export default function Home() {
   return (
     <>
-      <Header />
       <ShowPokeList />
     </>
   )

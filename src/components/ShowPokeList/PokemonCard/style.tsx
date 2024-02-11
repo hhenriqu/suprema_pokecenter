@@ -50,4 +50,8 @@ export const CardDiv = styled.div`
     font-weight: 800;
     color: #3b4cca;
   }
+
+  &:hover {
+    background: #FF0000;
+  }
 `
