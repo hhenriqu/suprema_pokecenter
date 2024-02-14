@@ -1,10 +1,5 @@
-import Header from '@/components/Header/Header'
-import ShowPokeList from '@/components/ShowPokeList/ShowPokeList'
+import HomePage from '@/pages/HomePage'
 
 export default function Home() {
-  return (
-    <>
-      <ShowPokeList />
-    </>
-  )
+  return <HomePage />
 }

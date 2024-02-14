@@ -41,7 +41,6 @@ export default function ShowPokeList() {
 
   return (
     <ShowPokeWrapper>
-      <h2>Pokemons!</h2>
       {loading ? (
         <p>Loading...</p>
       ) : pokemons.length > 0 ? (

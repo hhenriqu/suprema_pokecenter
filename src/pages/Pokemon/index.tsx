@@ -1,7 +1,7 @@
 'use client'
 import IPokemon from '@/types/pokemon'
 import Image from 'next/image'
-import { PokeImageDiv, PokemonDetailSection } from './style'
+import { PokeImageDiv, PokeStatusDiv, PokemonDetailSection } from './style'
 
 type Props = {
   pokemon: IPokemon
@@ -13,11 +13,9 @@ export default function PokemonId({ pokemon }: Props) {
       <div className="pokeWrapper">
         <div className="TitleCard">
           <div className="idTitle">
-            <p>
-              <span>ID:</span> {pokemon.id}
-            </p>
+            <p>{pokemon.id}</p>
           </div>
-          <div className="idCard">
+          <div className="pokeName">
             <p>{pokemon.name}</p>
           </div>
         </div>
@@ -27,25 +25,30 @@ export default function PokemonId({ pokemon }: Props) {
             <Image
               src="/assets/paisagem_pokemon.png"
               alt=""
-              width={400}
-              height={400}
+              width={300}
+              height={300}
             />
 
             <Image
               src={pokemon.imageUrl}
               alt="PokemonCard"
-              width={400}
-              height={400}
+              width={300}
+              height={300}
             />
           </PokeImageDiv>
 
-          <div className="pokeStatus">
-            <p>poder: {pokemon.power}</p>
-            <p>Tipo:</p>
-            {pokemon.type.map((typeObj, index) => (
-              <p key={index}>{typeObj.type.name}</p>
-            ))}
-          </div>
+          <PokeStatusDiv>
+            <p>Power: {pokemon.power}</p>
+            <div className="pokeTypes">
+              <p>Type:</p>
+              {pokemon.type.map((typeObj, index) => (
+                <p key={index}>
+                  {typeObj.type.name}
+                  {index !== pokemon.type.length - 1 && ' /'}
+                </p>
+              ))}
+            </div>
+          </PokeStatusDiv>
         </div>
       </div>
     </PokemonDetailSection>

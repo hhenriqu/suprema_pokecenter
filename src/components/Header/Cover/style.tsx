@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledDiv = styled.div`
-background-color: black;
+  .imgCover {
+    width: 100%;
+    object-fit: cover;
+  }
 `

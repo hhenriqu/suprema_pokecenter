@@ -1,10 +1,10 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import { StyledDiv } from './Header.style'
+import { StyledDiv } from './style'
 
 
-export default function Header() {
+export default function Footer() {
   return (
     <StyledDiv>
       <Image
