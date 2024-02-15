@@ -14,9 +14,8 @@ export default function Navbar() {
 
   return (
     <StyledDiv>
-      <p>Bem vindo ao Suprema Pokecenter!</p>
+      <a href="/">Página Inicial</a>
       <SearchBar onSearch={handleSearch} />
-      <a href="/">HOME</a>
       <a href="/contact">Entre em contato!</a>
     </StyledDiv>
   )
