@@ -1,8 +1,15 @@
 import getTypes from '@/services/getTypes'
 import React, { useEffect, useState } from 'react'
-import { StyledButton, StyledList, StyledListPokemons, StyledWrapper } from './style'
+import {
+  StyledButton,
+  StyledList,
+  StyledListPokemons,
+  StyledWrapper
+} from './style'
 import getPokemonsByTypes from '@/services/getPokemonsByTypes'
 import { IPokemonListTypes, IPokemonTypes } from '@/types/pokemonTypes'
+import { URL_TYPE } from '@/utils/constants'
+import Link from 'next/link'
 
 export default function PokemonTypesButtons() {
   const [pokeTypes, setPokeTypes] = useState<IPokemonTypes[]>([])
@@ -20,6 +27,10 @@ export default function PokemonTypesButtons() {
     fetchPokemonsTypes()
   }, [])
 
+  useEffect(() => {
+    getPokemonsList(URL_TYPE)
+  }, [pokeTypes])
+
   async function getPokemonsList(url: string) {
     const pokemons = await getPokemonsByTypes(url)
     setPokemonsList(pokemons)
@@ -36,10 +47,14 @@ export default function PokemonTypesButtons() {
           </li>
         ))}
       </StyledList>
+      <p>Escolha um pokemon abaixo para ver mais informações</p>
       <StyledList>
-        <p>Escolha um pokemon abaixo para ver mais informações</p>
         {pokemonsList.map((poke: IPokemonListTypes, index: number) => (
-          <StyledListPokemons key={index}>{poke.pokemon.name}</StyledListPokemons>
+          <StyledListPokemons key={index}>
+            <Link  className='classLink' key={index} href={`/pokemon/${poke.pokemon.name}`}>
+              {poke.pokemon.name}
+            </Link>
+          </StyledListPokemons>
         ))}
       </StyledList>
     </StyledWrapper>

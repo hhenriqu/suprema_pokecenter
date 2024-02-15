@@ -24,11 +24,15 @@ export const StyledButton = styled.button`
   text-transform: capitalize;
   font-size: 16px;
   font-weight: bold;
+
+  &:hover {
+    background-color: #ffde00;
+  }
 `
 export const StyledListPokemons = styled.li`
-  width: 7rem;
+  min-width: 7rem;
   height: 1.5rem;
-  padding: 0.2rem;
+  padding: 0.2rem 0.5rem;
   border: none;
   border-radius: 15px;
   background-color: #ff0000;
@@ -36,6 +40,14 @@ export const StyledListPokemons = styled.li`
   text-transform: capitalize;
   font-size: 16px;
   font-weight: bold;
-  color: #f0f0f0;
   text-align: center;
+
+  .classLink {
+    color: #f0f0f0;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #cc0000;
+  }
 `
